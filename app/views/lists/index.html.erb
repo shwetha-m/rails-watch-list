@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-tertiary px-3">
+  <img style="width:50px;" src="https://images.unsplash.com/photo-1691480213129-106b2c7d1ee8?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="popcorn">
+  <ul class="nav nav-pills">
+    <li class="nav-item text-decoration-none">
+      <%= link_to "My lists", lists_path, class: "text-decoration-none pe-2" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "New list", new_list_path, class: "text-decoration-none ps-2" %>
+    </li>
+  </ul>
+</nav>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="color: white;">
+    <h1>My <strong>favorite</strong> movies!</h1>
+    <p>Find out more...</p>
+  </div>
+</div>
+
+
+<div class="p-3">
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to "#{list.name}", list_path(list) %></li>
+    <% end %>
+  <ul>
+</div>
+
+<p><%= link_to "Create a movie list", new_list_path %></p>
